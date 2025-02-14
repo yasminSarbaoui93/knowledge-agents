@@ -1,0 +1,270 @@
+
+<rdf:RDF xmlns="http://www.example.org/tensile#"
+     xml:base="http://www.example.org/tensile"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.example.org/tensile"/>
+
+    <!-- Classes -->
+    <owl:Class rdf:about="http://www.example.org/tensile#TestSpecimen"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#RingSpecimen"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#TensileTest"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#Measurement"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#Procedure"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#Calculation"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#VulcanizedRubber"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#ThermoplasticElastomer"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#TensileMachine"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#TestChamber"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#Micrometer"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#DumbbellSpecimen"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#StraightSpecimen"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#SheetSpecimen"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#PlaqueSpecimen"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#Die"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#BenchMarker"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#Grip"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#TestTemperature"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#TestApparatus"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#StandardDie"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#CrossSectionalArea"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#Cutter"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#RubberHoldingPlate"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#SourceOfAppliedPressure"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#SoapSolution"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#CutterRotator"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#IndexingTable"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#TestFixture"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#ASTMCutRing"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#Type1RingSpecimen"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#Spindle"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#Lubricant"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#Elongation"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#YieldStress"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#YieldStrain"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#BreakingElongation"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#Reproducibility"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#Repeatability"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#Material"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#Precision"/>
+    <owl:Class rdf:about="http://www.example.org/tensile#Bias"/>
+
+    <!-- Object Properties -->
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#hasSpecimen">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#TensileTest"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#TestSpecimen"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#followsProcedure">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#TensileTest"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#Procedure"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#resultsIn">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#TensileTest"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#Calculation"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#usesMaterial">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#TestSpecimen"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#VulcanizedRubber"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#usesMaterial">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#TestSpecimen"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#ThermoplasticElastomer"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#usesMachine">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#TensileTest"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#TensileMachine"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#usesChamber">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#TensileTest"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#TestChamber"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#usesMicrometer">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#Measurement"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#Micrometer"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#usesDie">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#TestApparatus"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#Die"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#usesBenchMarker">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#TestApparatus"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#BenchMarker"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#usesGrip">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#TestApparatus"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#Grip"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#hasTemperature">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#TestApparatus"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#TestTemperature"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#usesStandardDie">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#DumbbellSpecimen"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#StandardDie"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#hasCrossSectionalArea">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#DumbbellSpecimen"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#CrossSectionalArea"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#usesCutter">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#TestApparatus"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#Cutter"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#usesRubberHoldingPlate">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#TestApparatus"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#RubberHoldingPlate"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#usesSourceOfAppliedPressure">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#TestApparatus"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#SourceOfAppliedPressure"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#usesSoapSolution">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#Procedure"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#SoapSolution"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#usesCutterRotator">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#TestApparatus"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#CutterRotator"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#usesIndexingTable">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#TestApparatus"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#IndexingTable"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#usesTestFixture">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#TestApparatus"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#TestFixture"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#hasRingType">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#RingSpecimen"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#ASTMCutRing"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#usesSpindle">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#Procedure"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#Spindle"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#usesLubricant">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#Procedure"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#Lubricant"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#hasReproducibility">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#TensileTest"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#Reproducibility"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#hasRepeatability">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#TensileTest"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#Repeatability"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#usesMaterial">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#TestSpecimen"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#Material"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#hasPrecision">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#TensileTest"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#Precision"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/tensile#hasBias">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#TensileTest"/>
+        <rdfs:range rdf:resource="http://www.example.org/tensile#Bias"/>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tensile#hasCircumference">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#RingSpecimen"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tensile#hasDiameter">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#RingSpecimen"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tensile#hasThickness">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#RingSpecimen"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tensile#hasInitialSeparation">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#Procedure"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tensile#hasTemperature">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#Procedure"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tensile#hasElongation">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#Measurement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tensile#hasYieldPoint">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#Measurement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tensile#hasYieldStrain">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#Measurement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tensile#hasYieldStress">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#Measurement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tensile#hasGripSeparation">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#RingSpecimen"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tensile#hasWidth">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#RingSpecimen"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tensile#hasDimension">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#StandardDie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tensile#hasCrossSectionalAreaValue">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#CrossSectionalArea"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tensile#hasRotationSpeed">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#CutterRotator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tensile#hasRunOut">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#CutterRotator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tensile#hasCutRingRadius">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#TestFixture"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tensile#hasRingDimension">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#Type1RingSpecimen"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tensile#hasSpindleSeparation">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#Spindle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tensile#hasBreakingElongation">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#Measurement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tensile#hasReproducibilityValue">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#Reproducibility"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tensile#hasRepeatabilityValue">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#Repeatability"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tensile#hasMaterialName">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#Material"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tensile#hasPrecisionValue">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#Precision"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tensile#hasBiasValue">
+        <rdfs:domain rdf:resource="http://www.example.org/tensile#Bias"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>
