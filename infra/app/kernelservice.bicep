@@ -109,7 +109,7 @@ resource kmService 'Microsoft.App/containerApps@2023-05-01' = {
             }
             {
               name: 'KernelMemory__DefaultIndexName'
-              value: 'default'
+              value: 'onthology'
             }
             {
               name: 'KernelMemory__ServiceAuthorization__Enabled'
@@ -146,6 +146,14 @@ resource kmService 'Microsoft.App/containerApps@2023-05-01' = {
             {
               name: 'KernelMemory__DataIngestion__ImageOcrType'
               value: 'AzureAIDocIntel'
+            }
+            {
+              name: 'KernelMemory__DataIngestion__TextPartitioning__MaxTokensPerParagraph'
+              value: '512'
+            }
+            {
+              name: 'KernelMemory__DataIngestion__TextPartitioning__OverlappingTokens'
+              value: '100'
             }
             {
               name: 'KernelMemory__Retrieval__EmbeddingGeneratorType'

@@ -9,7 +9,7 @@ echo "No environment name provided - aborting"
 exit 0;
 fi
 
-SERVICE_NAME="km-service"
+SERVICE_NAME="on-km-service"
 
 RESOURCE_GROUP="rg-$AZURE_ENV_NAME"
 

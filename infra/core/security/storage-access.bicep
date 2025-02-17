@@ -3,6 +3,20 @@ param principalId string
 param suffix string = uniqueString(resourceGroup().id)
 
 // Storage Queue Data Contributor
+resource roleAssignment0 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
+  name: guid('Storage Contributor-${suffix}')
+  scope: storageAccount
+  properties: {
+    roleDefinitionId: subscriptionResourceId(
+      'Microsoft.Authorization/roleDefinitions',
+      '17d1049b-9a84-46fb-8f53-869881c3d3ab'
+    )
+    principalId: principalId
+    principalType: 'ServicePrincipal'
+  }
+}
+
+// Storage Queue Data Contributor
 resource roleAssignment1 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
   name: guid('Storage Queue Data Contributor-${suffix}')
   scope: storageAccount
