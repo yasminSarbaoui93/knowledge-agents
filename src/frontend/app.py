@@ -136,6 +136,8 @@ with st.sidebar:
             
             st.success("Files uploaded and saved successfully!")
 
+        selected_option = st.selectbox("Select a file for onthology generation", ["MDr_br141011_SR 0643_2.pdf", "CMMT256.pdf", "D412-16(2021).pdf"])
+
         # Start a new conversation
         if st.button("New Conversation"):
             st.session_state.session_id = str(uuid.uuid4())

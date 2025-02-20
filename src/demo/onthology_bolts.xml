@@ -1,0 +1,272 @@
+
+<rdf:RDF xmlns="http://www.example.org/screw#"
+     xml:base="http://www.example.org/screw"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     
+    <owl:Ontology rdf:about="http://www.example.org/screw"/>
+
+    <!-- Classes -->
+    <owl:Class rdf:about="http://www.example.org/screw#Screw"/>
+    <owl:Class rdf:about="http://www.example.org/screw#Fastener"/>
+    <owl:Class rdf:about="http://www.example.org/screw#Washer">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/screw#Fastener"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/screw#Pin">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/screw#Fastener"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/screw#SpiralPin">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/screw#Pin"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/screw#ClevisPin">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/screw#Pin"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/screw#OtherFastener">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/screw#Fastener"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/screw#HexagonHeadBolt">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/screw#Fastener"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/screw#HexagonSocketHeadCapScrew">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/screw#Fastener"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/screw#TappingScrew">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/screw#Fastener"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/screw#SlottedSetScrew">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/screw#Fastener"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/screw#Stud">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/screw#Fastener"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/screw#ScrewPlug">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/screw#Fastener"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/screw#WoodScrew">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/screw#Screw"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/screw#Nut">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/screw#Fastener"/>
+    </owl:Class>
+
+    <!-- Data Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.example.org/screw#hasDINStandard">
+        <rdfs:domain rdf:resource="http://www.example.org/screw#Fastener"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/screw#hasISOStandard">
+        <rdfs:domain rdf:resource="http://www.example.org/screw#Fastener"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/screw#hasDINStandardWithdrawn">
+        <rdfs:domain rdf:resource="http://www.example.org/screw#Fastener"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/screw#hasISONormName">
+        <rdfs:domain rdf:resource="http://www.example.org/screw#Fastener"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/screw#hasInterchangeability">
+        <rdfs:domain rdf:resource="http://www.example.org/screw#Fastener"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.example.org/screw#hasComments">
+        <rdfs:domain rdf:resource="http://www.example.org/screw#Fastener"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Object Properties -->
+    <owl:ObjectProperty rdf:about="http://www.example.org/screw#isInterchangeableWith">
+        <rdfs:domain rdf:resource="http://www.example.org/screw#Fastener"/>
+        <rdfs:range rdf:resource="http://www.example.org/screw#Fastener"/>
+    </owl:ObjectProperty>
+
+    <!-- Instances -->
+    <owl:NamedIndividual rdf:about="http://www.example.org/screw#WingScrewsRoundedWings">
+        <rdf:type rdf:resource="http://www.example.org/screw#OtherFastener"/>
+        <hasDINStandard>316</hasDINStandard>
+        <hasDINStandardWithdrawn>false</hasDINStandardWithdrawn>
+        <hasISOStandard rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-</hasISOStandard>
+        <hasInterchangeability>no</hasInterchangeability>
+        <hasComments>DIN standard is still valid</hasComments>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.org/screw#Eyebolts">
+        <rdf:type rdf:resource="http://www.example.org/screw#OtherFastener"/>
+        <hasDINStandard>444</hasDINStandard>
+        <hasDINStandardWithdrawn>false</hasDINStandardWithdrawn>
+        <hasISOStandard rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-</hasISOStandard>
+        <hasInterchangeability>no</hasInterchangeability>
+        <hasComments>DIN standard is still valid</hasComments>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.org/screw#LiftingEyeBolts">
+        <rdf:type rdf:resource="http://www.example.org/screw#OtherFastener"/>
+        <hasDINStandard>580</hasDINStandard>
+        <hasDINStandardWithdrawn>false</hasDINStandardWithdrawn>
+        <hasISOStandard rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-</hasISOStandard>
+        <hasInterchangeability>no</hasInterchangeability>
+        <hasComments>DIN standard is still valid</hasComments>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.org/screw#CupHeadSquareNeckBolts">
+        <rdf:type rdf:resource="http://www.example.org/screw#OtherFastener"/>
+        <hasDINStandard>603</hasDINStandard>
+        <hasDINStandardWithdrawn>false</hasDINStandardWithdrawn>
+        <hasISOStandard rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-</hasISOStandard>
+        <hasInterchangeability>no</hasInterchangeability>
+        <hasComments>DIN standard is still valid</hasComments>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.org/screw#FlatCountersunkHeadNibBolts">
+        <rdf:type rdf:resource="http://www.example.org/screw#OtherFastener"/>
+        <hasDINStandard>604</hasDINStandard>
+        <hasDINStandardWithdrawn>false</hasDINStandardWithdrawn>
+        <hasISOStandard rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-</hasISOStandard>
+        <hasInterchangeability>no</hasInterchangeability>
+        <hasComments>DIN standard is still valid</hasComments>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.org/screw#FlatCountersunkHeadSquareNeckBoltsWithLongSquare">
+        <rdf:type rdf:resource="http://www.example.org/screw#OtherFastener"/>
+        <hasDINStandard>605</hasDINStandard>
+        <hasDINStandardWithdrawn>false</hasDINStandardWithdrawn>
+        <hasISOStandard rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-</hasISOStandard>
+        <hasInterchangeability>no</hasInterchangeability>
+        <hasComments>DIN standard is still valid</hasComments>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.org/screw#CupHeadNibBolts">
+        <rdf:type rdf:resource="http://www.example.org/screw#OtherFastener"/>
+        <hasDINStandard>607</hasDINStandard>
+        <hasDINStandardWithdrawn>false</hasDINStandardWithdrawn>
+        <hasISOStandard rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-</hasISOStandard>
+        <hasInterchangeability>no</hasInterchangeability>
+        <hasComments>DIN standard is still valid</hasComments>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.org/screw#FlatCountersunkHeadSquareNeckBoltsWithShortSquare">
+        <rdf:type rdf:resource="http://www.example.org/screw#OtherFastener"/>
+        <hasDINStandard>608</hasDINStandard>
+        <hasDINStandardWithdrawn>false</hasDINStandardWithdrawn>
+        <hasISOStandard rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-</hasISOStandard>
+        <hasInterchangeability>no</hasInterchangeability>
+        <hasComments>DIN standard is still valid</hasComments>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.org/screw#ThreadRollingScrews">
+        <rdf:type rdf:resource="http://www.example.org/screw#OtherFastener"/>
+        <hasDINStandard>7500</hasDINStandard>
+        <hasDINStandardWithdrawn>false</hasDINStandardWithdrawn>
+        <hasISOStandard rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-</hasISOStandard>
+        <hasInterchangeability>no</hasInterchangeability>
+        <hasComments>DIN standard is still valid</hasComments>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.org/screw#ThreadCuttingScrewsHexagonScrewsAndSlottedHeadScrews">
+        <rdf:type rdf:resource="http://www.example.org/screw#OtherFastener"/>
+        <hasDINStandard>7513</hasDINStandard>
+        <hasDINStandardWithdrawn>false</hasDINStandardWithdrawn>
+        <hasISOStandard rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-</hasISOStandard>
+        <hasInterchangeability>no</hasInterchangeability>
+        <hasComments>DIN standard is still valid</hasComments>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.org/screw#ThreadedCuttingScrewsCrossRecessedHeadScrews">
+        <rdf:type rdf:resource="http://www.example.org/screw#OtherFastener"/>
+        <hasDINStandard>7516</hasDINStandard>
+        <hasDINStandardWithdrawn>false</hasDINStandardWithdrawn>
+        <hasISOStandard rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-</hasISOStandard>
+        <hasInterchangeability>no</hasInterchangeability>
+        <hasComments>DIN standard is still valid</hasComments>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.org/screw#SlottedRaisedCountersunkOvalHeadWoodScrews">
+        <rdf:type rdf:resource="http://www.example.org/screw#WoodScrew"/>
+        <hasDINStandard>95</hasDINStandard>
+        <hasDINStandardWithdrawn>false</hasDINStandardWithdrawn>
+        <hasISOStandard rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-</hasISOStandard>
+        <hasInterchangeability>no</hasInterchangeability>
+        <hasComments>DIN standard is still valid</hasComments>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.org/screw#SlottedHeadWoodScrews">
+        <rdf:type rdf:resource="http://www.example.org/screw#WoodScrew"/>
+        <hasDINStandard>96</hasDINStandard>
+        <hasDINStandardWithdrawn>false</hasDINStandardWithdrawn>
+        <hasISOStandard rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-</hasISOStandard>
+        <hasInterchangeability>no</hasInterchangeability>
+        <hasComments>DIN standard is still valid</hasComments>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.org/screw#SlottedCountersunkFlatHeadWoodScrews">
+        <rdf:type rdf:resource="http://www.example.org/screw#WoodScrew"/>
+        <hasDINStandard>97</hasDINStandard>
+        <hasDINStandardWithdrawn>false</hasDINStandardWithdrawn>
+        <hasISOStandard rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-</hasISOStandard>
+        <hasInterchangeability>no</hasInterchangeability>
+        <hasComments>DIN standard is still valid</hasComments>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.org/screw#HexagonHeadWoodScrews">
+        <rdf:type rdf:resource="http://www.example.org/screw#WoodScrew"/>
+        <hasDINStandard>571</hasDINStandard>
+        <hasDINStandardWithdrawn>false</hasDINStandardWithdrawn>
+        <hasISOStandard rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-</hasISOStandard>
+        <hasInterchangeability>no</hasInterchangeability>
+        <hasComments>DIN standard is still valid</hasComments>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.org/screw#HexagonNutsWithMetricCoarsePitchThread">
+        <rdf:type rdf:resource="http://www.example.org/screw#Nut"/>
+        <hasDINStandard>934</hasDINStandard>
+        <hasDINStandardWithdrawn>false</hasDINStandardWithdrawn>
+        <hasISOStandard>4032</hasISOStandard>
+        <hasInterchangeability>yes</hasInterchangeability>
+        <hasComments>Nominal Ø changed, Width across flats for M10, M12, M14, M22 changed</hasComments>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.org/screw#HexagonNutsWithMetricFinePitchThread">
+        <rdf:type rdf:resource="http://www.example.org/screw#Nut"/>
+        <hasDINStandard>934</hasDINStandard>
+        <hasDINStandardWithdrawn>true</hasDINStandardWithdrawn>
+        <hasISOStandard>8673</hasISOStandard>
+        <hasInterchangeability>yes</hasInterchangeability>
+        <hasComments>Nominal Ø changed, Width across flats for M10, M12, M14, M22 changed</hasComments>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.org/screw#HexagonNutsStyle2">
+        <rdf:type rdf:resource="http://www.example.org/screw#Nut"/>
+        <hasDINStandard>555</hasDINStandard>
+        <hasDINStandardWithdrawn>false</hasDINStandardWithdrawn>
+        <hasISOStandard>4033</hasISOStandard>
+        <hasInterchangeability>yes</hasInterchangeability>
+        <hasComments>For property class 5</hasComments>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.org/screw#HexagonNutsProductGradeC">
+        <rdf:type rdf:resource="http://www.example.org/screw#Nut"/>
+        <hasDINStandard>555</hasDINStandard>
+        <hasDINStandardWithdrawn>false</hasDINStandardWithdrawn>
+        <hasISOStandard>4034</hasISOStandard>
+        <hasInterchangeability>yes</hasInterchangeability>
+        <hasComments>For property class 5</hasComments>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.org/screw#HexagonThinNutsUnchamfered">
+        <rdf:type rdf:resource="http://www.example.org/screw#Nut"/>
+        <hasDINStandard>439 Part 1</hasDINStandard>
+        <hasDINStandardWithdrawn>true</hasDINStandardWithdrawn>
+        <hasISOStandard>4036</hasISOStandard>
+        <hasInterchangeability>yes</hasInterchangeability>
+        <hasComments>Width across flats for M10 changed. Recommendation: Use nuts according to ISO 4035</hasComments>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.org/screw#HexagonThinNutsChamfered">
+        <rdf:type rdf:resource="http://www.example.org/screw#Nut"/>
+        <hasDINStandard>439 Part 2</hasDINStandard>
+        <hasDINStandardWithdrawn>true</hasDINStandardWithdrawn>
+        <hasISOStandard>4035</hasISOStandard>
+        <hasInterchangeability>yes</hasInterchangeability>
+        <hasComments>Property class for stainless steels changed from 50 to 025 and from 70 to 035. Width across flats for M10, M12, M14, M22 changed. Nominal Ø M1.8 omitted. Only for coarse pitch thread</hasComments>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.org/screw#HexagonThinNutsChamferedMetricFinePitchThread">
+        <rdf:type rdf:resource="http://www.example.org/screw#Nut"/>
+        <hasDINStandard>439</hasDINStandard>
+        <hasDINStandardWithdrawn>true</hasDINStandardWithdrawn>
+        <hasISOStandard>8675</hasISOStandard>
+        <hasInterchangeability>yes</hasInterchangeability>
+        <hasComments>Property class for stainless steels changed from 50 to 025 and from 70 to 035. Width across flats for M10, M12, M14, M22 changed. Nominal Ø M1.8 omitted</hasComments>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.org/screw#HexagonThinNuts">
+        <rdf:type rdf:resource="http://www.example.org/screw#Nut"/>
+        <hasDINStandard>936</hasDINStandard>
+        <hasDINStandardWithdrawn>true</hasDINStandardWithdrawn>
+        <hasISOStandard rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-</hasISOStandard>
+        <hasInterchangeability>no</hasInterchangeability>
+        <hasComments>Withdrawn without replacement. Recommendation: Use nuts according to ISO 4035, as they are nearly identical</hasComments>
+    </owl:NamedIndividual>
+
+</rdf:RDF>
