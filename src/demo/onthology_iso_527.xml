@@ -1,0 +1,332 @@
+
+<rdf:RDF xmlns="http://example.org/plastics.owl#"
+         xml:base="http://example.org/plastics.owl"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Ontology rdf:about="http://example.org/plastics.owl"/>
+  
+  <owl:Class rdf:about="#Property">
+    <rdfs:label>Property</rdfs:label>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#MeasurementProperty">
+    <rdfs:subClassOf rdf:resource="#Property"/>
+    <rdfs:label>MeasurementProperty</rdfs:label>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#Stress_3_6">
+    <rdfs:subClassOf rdf:resource="#MeasurementProperty"/>
+    <rdfs:label>Stress_3_6</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Normal force per unit area of the original cross-section within the gauge length</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Engineering Stress</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#StressAtYield_3_6_1">
+    <rdfs:subClassOf rdf:resource="#Stress_3_6"/>
+    <rdfs:label>StressAtYield_3_6_1</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stress at the yield strain</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yield Stress</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#StressAtStrength_3_6_3">
+    <rdfs:subClassOf rdf:resource="#Stress_3_6"/>
+    <rdfs:label>StressAtStrength_3_6_3</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stress at which the strength is reached</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Strength Stress</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#StressAtBreak_3_6_4">
+    <rdfs:subClassOf rdf:resource="#Stress_3_6"/>
+    <rdfs:label>StressAtBreak_3_6_4</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stress at which the specimen breaks</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Breaking Stress</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#Strain_3_7">
+    <rdfs:subClassOf rdf:resource="#MeasurementProperty"/>
+    <rdfs:label>Strain_3_7</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Increase in length per unit original length of the gauge</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Deformation</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#StrainAtYield_3_7_1">
+    <rdfs:subClassOf rdf:resource="#Strain_3_7"/>
+    <rdfs:label>StrainAtYield_3_7_1</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Strain at which the specimen yields</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yield Strain</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#StrainAtBreak_3_7_2">
+    <rdfs:subClassOf rdf:resource="#Strain_3_7"/>
+    <rdfs:label>StrainAtBreak_3_7_2</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Strain at which the specimen breaks</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Breaking Strain</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#StrainAtStrength_3_7_3">
+    <rdfs:subClassOf rdf:resource="#Strain_3_7"/>
+    <rdfs:label>StrainAtStrength_3_7_3</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Strain at which the strength is reached</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Strength Strain</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#NominalStrain_3_8">
+    <rdfs:subClassOf rdf:resource="#Strain_3_7"/>
+    <rdfs:label>NominalStrain_3_8</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Crosshead displacement divided by the gripping distance</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Engineering Strain</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#NominalStrainAtBreak_3_8_1">
+    <rdfs:subClassOf rdf:resource="#NominalStrain_3_8"/>
+    <rdfs:label>NominalStrainAtBreak_3_8_1</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nominal strain at which the specimen breaks</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Breaking Nominal Strain</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#TensileModulus_3_9">
+    <rdfs:subClassOf rdf:resource="#MeasurementProperty"/>
+    <rdfs:label>TensileModulus_3_9</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Slope of the stress/strain curve in the specified strain interval</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Elastic Modulus</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#PoissonsRatio_3_10">
+    <rdfs:subClassOf rdf:resource="#MeasurementProperty"/>
+    <rdfs:label>PoissonsRatio_3_10</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Negative ratio of lateral strain to longitudinal strain within the linear portion of the curve</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ν</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#TestSpecimen">
+    <rdfs:label>TestSpecimen</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specimen used for tensile testing of plastics</hasDefinition>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#TestSpecimenShapeAndDimensions_6_1">
+    <rdfs:subClassOf rdf:resource="#TestSpecimen"/>
+    <rdfs:label>ShapeAndDimensions_6_1</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifications of the shape and dimensions of the test specimen</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specimen Geometry</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#TestSpecimenPreparation_6_2">
+    <rdfs:subClassOf rdf:resource="#TestSpecimen"/>
+    <rdfs:label>PreparationOfSpecimens_6_2</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Methods for preparing test specimens</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specimen Preparation</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#GaugeMarks_6_3">
+    <rdfs:subClassOf rdf:resource="#TestSpecimen"/>
+    <rdfs:label>GaugeMarks_6_3</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Marks indicating the gauge length on the test specimen</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Measurement Marks</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#Anisotropy_6_5">
+    <rdfs:subClassOf rdf:resource="#TestSpecimen"/>
+    <rdfs:label>Anisotropy_6_5</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Directional dependence of the material properties</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Directional Properties</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#Apparatus">
+    <rdfs:label>Apparatus</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Equipment used in tensile testing</hasDefinition>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#TestingMachine_5_1">
+    <rdfs:subClassOf rdf:resource="#Apparatus"/>
+    <rdfs:label>TestingMachine_5_1</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Machine used to perform tensile tests</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tensile Tester</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#GrippingDevice_5_1_3">
+    <rdfs:subClassOf rdf:resource="#TestingMachine_5_1"/>
+    <rdfs:label>GrippingDevice_5_1_3</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Device for holding the test specimen during testing</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grippers</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#ForceIndicator_5_1_4">
+    <rdfs:subClassOf rdf:resource="#TestingMachine_5_1"/>
+    <rdfs:label>ForceIndicator_5_1_4</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">System for measuring the force applied during testing</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Load Cell</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#StrainIndicator_5_1_5">
+    <rdfs:subClassOf rdf:resource="#TestingMachine_5_1"/>
+    <rdfs:label>StrainIndicator_5_1_5</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Device for measuring strain during testing</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Extensometer</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#Extensometer_5_1_5_1">
+    <rdfs:subClassOf rdf:resource="#StrainIndicator_5_1_5"/>
+    <rdfs:label>Extensometer_5_1_5_1</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Contact device for measuring elongation</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Contact Extensometer</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#StrainGauge_5_1_5_2">
+    <rdfs:subClassOf rdf:resource="#StrainIndicator_5_1_5"/>
+    <rdfs:label>StrainGauge_5_1_5_2</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Non-contact device for measuring strain</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gauge</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#DataRecorder_5_1_6">
+    <rdfs:subClassOf rdf:resource="#TestingMachine_5_1"/>
+    <rdfs:label>DataRecorder_5_1_6</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">System for recording test data</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Acquisition System</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:ObjectProperty rdf:about="#hasMeasurementProperty">
+    <rdfs:label>hasMeasurementProperty</rdfs:label>
+    <rdfs:domain rdf:resource="#TestSpecimen"/>
+    <rdfs:range rdf:resource="#MeasurementProperty"/>
+  </owl:ObjectProperty>
+  
+  <owl:ObjectProperty rdf:about="#hasApparatus">
+    <rdfs:label>hasApparatus</rdfs:label>
+    <rdfs:domain rdf:resource="#TestProcedure"/>
+    <rdfs:range rdf:resource="#Apparatus"/>
+  </owl:ObjectProperty>
+  
+  <owl:ObjectProperty rdf:about="#hasProcedure">
+    <rdfs:label>hasProcedure</rdfs:label>
+    <rdfs:domain rdf:resource="#TestSpecimen"/>
+    <rdfs:range rdf:resource="#TestProcedure"/>
+  </owl:ObjectProperty>
+  
+  <owl:Class rdf:about="#TestProcedure">
+    <rdfs:label>TestProcedure</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Procedure for conducting tensile tests</hasDefinition>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#TestAtmosphere_9_1">
+    <rdfs:subClassOf rdf:resource="#TestProcedure"/>
+    <rdfs:label>TestAtmosphere_9_1</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Atmosphere conditions during testing</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Testing Environment</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#DimensionsOfTestSpecimen_9_2">
+    <rdfs:subClassOf rdf:resource="#TestProcedure"/>
+    <rdfs:label>DimensionsOfTestSpecimen_9_2</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Determination of test specimen dimensions during testing</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specimen Dimension Measurement</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#Gripping_9_3">
+    <rdfs:subClassOf rdf:resource="#TestProcedure"/>
+    <rdfs:label>Gripping_9_3</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Procedure for securing the test specimen in the grips</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specimen Gripping</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#Prestresses_9_4">
+    <rdfs:subClassOf rdf:resource="#TestProcedure"/>
+    <rdfs:label>Prestresses_9_4</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Application of prestress to the test specimen before testing</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Preloading</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#SettingOfExtensometers_9_5">
+    <rdfs:subClassOf rdf:resource="#TestProcedure"/>
+    <rdfs:label>SettingOfExtensometers_9_5</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Procedure for configuring extensometers on the test specimen</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Extensometer Setup</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#TestSpeed_9_6">
+    <rdfs:subClassOf rdf:resource="#TestProcedure"/>
+    <rdfs:label>TestSpeed_9_6</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Speed at which the test specimen is extended during testing</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Loading Rate</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#RecordingOfData_9_7">
+    <rdfs:subClassOf rdf:resource="#TestProcedure"/>
+    <rdfs:label>RecordingOfData_9_7</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Procedure for recording data during testing</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Logging</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:Class rdf:about="#CalibrationRequirements_AnnexC">
+    <rdfs:label>CalibrationRequirements_AnnexC</rdfs:label>
+    <hasDefinition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Requirements for calibrating tensile modulus determination</hasDefinition>
+    <hasSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Calibration Standards</hasSynonym>
+    <isDeprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isDeprecated>
+  </owl:Class>
+  
+  <owl:DatatypeProperty rdf:about="#hasDefinition">
+    <rdfs:label>hasDefinition</rdfs:label>
+    <rdfs:domain rdf:resource="#Property"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  
+  <owl:DatatypeProperty rdf:about="#hasSynonym">
+    <rdfs:label>hasSynonym</rdfs:label>
+    <rdfs:domain rdf:resource="#Property"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  
+  <owl:DatatypeProperty rdf:about="#isDeprecated">
+    <rdfs:label>isDeprecated</rdfs:label>
+    <rdfs:domain rdf:resource="#Property"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </owl:DatatypeProperty>
+  
+  <owl:ObjectProperty rdf:about="#hasApparatus">
+    <rdfs:label>hasApparatus</rdfs:label>
+    <rdfs:domain rdf:resource="#TestProcedure"/>
+    <rdfs:range rdf:resource="#Apparatus"/>
+  </owl:ObjectProperty>
+  
+  <owl:ObjectProperty rdf:about="#hasProcedure">
+    <rdfs:label>hasProcedure</rdfs:label>
+    <rdfs:domain rdf:resource="#TestSpecimen"/>
+    <rdfs:range rdf:resource="#TestProcedure"/>
+  </owl:ObjectProperty>
+  
+</rdf:RDF>

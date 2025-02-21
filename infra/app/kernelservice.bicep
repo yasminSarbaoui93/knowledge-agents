@@ -109,7 +109,7 @@ resource kmService 'Microsoft.App/containerApps@2023-05-01' = {
             }
             {
               name: 'KernelMemory__DefaultIndexName'
-              value: 'onthology'
+              value: 'finance'
             }
             {
               name: 'KernelMemory__ServiceAuthorization__Enabled'
@@ -170,6 +170,14 @@ resource kmService 'Microsoft.App/containerApps@2023-05-01' = {
             {
               name: 'KernelMemory__Services__AzureBlobs__Container'
               value: AzureBlobs_Container
+            }
+            {
+              name: 'KernelMemory__Services__AzureBlobs__Auth'
+              value: 'ConnectionString'
+            }
+            {
+              name: 'KernelMemory__Services__AzureBlobs__ConnectionString'
+              value: 'DefaultEndpointsProtocol=https;AccountName=stumasifqu97013723500262;AccountKey=ajQXhzY2ZIsqYPLajrvXOLD8S16IOJ8dZSZIa0uolNaORl2LcM+sBmRjqa+s2a39gFjsd7BEqmt0+AStDBMgHw==;EndpointSuffix=core.windows.net'
             }
             {
               name: 'KernelMemory__Services__AzureQueues__Account'
