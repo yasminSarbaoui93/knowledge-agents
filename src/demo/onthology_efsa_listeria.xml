@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns="http://www.efsa.europa.eu/ontologies/listeria#"
+    xml:base="http://www.efsa.europa.eu/ontologies/listeria"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+>
+    <owl:Ontology rdf:about="http://www.efsa.europa.eu/ontologies/listeria">
+        <rdfs:label>Outcome of the public consultation on the draft Scientific Opinion on Listeria monocytogenes contamination of ready-to-eat foods and the risk for human health in the EU</rdfs:label>
+        <rdfs:comment>
+            The European Food Safety Authority (EFSA) carried out a public consultation to receive input from the scientific community and all interested parties on the draft Scientific Opinion on Listeria monocytogenes contamination of ready-to-eat (RTE) foods and the risk for human health in the EU. The document was prepared by an ad hoc working group of the EFSA Panel on Biological Hazards (BIOHAZ Panel) and endorsed by the BIOHAZ Panel for public consultation at its Plenary meeting of 6 July 2017. The public consultation for this document was opened from 24 July 2017 to 29 September 2017. EFSA received 219 comments from 18 interested parties. EFSA and its BIOHAZ Panel wish to thank all stakeholders for their contributions. This report presents the comments received and provides a summarised description of how the comments were addressed in the finalisation of the document. The stakeholders' valuable and detailed comments were taken into account by the BIOHAZ working group to prepare an updated version of the Scientific Opinion. The Scientific Opinion was discussed and adopted at the BIOHAZ Plenary meeting on 6-7 December 2017, and is published in the EFSA Journal.
+        </rdfs:comment>
+        <dc:date>2017-12-11</dc:date>
+        <dc:identifier>doi:10.2903/sp.efsa.2018.EN-1352</dc:identifier>
+        <dc:subject>ready-to-eat food products, Listeria monocytogenes, human listeriosis, Time Series Analysis, Quantitative Microbial Risk Assessment, public consultation</dc:subject>
+        <dc:creator>European Food Safety Authority (EFSA)</dc:creator>
+        <dc:contributor>Panel members: Ana Allende, Declan Bolton, Marianne Chemaly, Robert Davies, Pablo Salvador Fernández Escámez, Rosina Girones, Lieve Herman, Kostas Koutsoumanis, Roland Lindqvist, Birgit Nørrung, Antonia Ricci, Lucy Robertson, Giuseppe Ru, Moez Sanaa, Marion Simmons, Panagiotis Skandamis, Emma Snary, Niko Speybroeck, Benno Ter Kuile, John Threlfall, Helene Wahlström</dc:contributor>
+    </owl:Ontology>
+
+    <!-- Abstract as an individual -->
+    <owl:NamedIndividual rdf:about="http://www.efsa.europa.eu/ontologies/listeria#Abstract">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label>Abstract</rdfs:label>
+        <rdfs:comment>
+            The European Food Safety Authority (EFSA) carried out a public consultation to receive input from the scientific community and all interested parties on the draft Scientific Opinion on Listeria monocytogenes contamination of ready-to-eat (RTE) foods and the risk for human health in the EU. The document was prepared by an ad hoc working group of the EFSA Panel on Biological Hazards (BIOHAZ Panel) and endorsed by the BIOHAZ Panel for public consultation at its Plenary meeting of 6 July 2017. The public consultation for this document was opened from 24 July 2017 to 29 September 2017. EFSA received 219 comments from 18 interested parties. EFSA and its BIOHAZ Panel wish to thank all stakeholders for their contributions. This report presents the comments received and provides a summarised description of how the comments were addressed in the finalisation of the document. The stakeholders' valuable and detailed comments were taken into account by the BIOHAZ working group to prepare an updated version of the Scientific Opinion. The Scientific Opinion was discussed and adopted at the BIOHAZ Plenary meeting on 6-7 December 2017, and is published in the EFSA Journal.
+        </rdfs:comment>
+    </owl:NamedIndividual>
+
+    <!-- Panel Members as a class and individuals -->
+    <owl:Class rdf:about="http://www.efsa.europa.eu/ontologies/listeria#PanelMember"/>
+    <owl:NamedIndividual rdf:about="http://www.efsa.europa.eu/ontologies/listeria#AnaAllende">
+        <rdf:type rdf:resource="http://www.efsa.europa.eu/ontologies/listeria#PanelMember"/>
+        <rdfs:label>Ana Allende</rdfs:label>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.efsa.europa.eu/ontologies/listeria#DeclanBolton">
+        <rdf:type rdf:resource="http://www.efsa.europa.eu/ontologies/listeria#PanelMember"/>
+        <rdfs:label>Declan Bolton</rdfs:label>
+    </owl:NamedIndividual>
+    <!-- ... (other panel members would be listed similarly) ... -->
+
+    <!-- Images as a class and individuals -->
+    <owl:Class rdf:about="http://www.efsa.europa.eu/ontologies/listeria#ReportImage"/>
+    <owl:NamedIndividual rdf:about="http://www.efsa.europa.eu/ontologies/listeria#Image_000000">
+        <rdf:type rdf:resource="http://www.efsa.europa.eu/ontologies/listeria#ReportImage"/>
+        <rdfs:label>Image 000000</rdfs:label>
+        <rdfs:seeAlso>output/EFSA Supporting Publications - 2018 -  - Outcome of the public consultation on the draft Scientific Opinion on Listeria/result_artifacts/image_000000_b018b304598e1415ec35f84b5a5de1aa7516497210519d775893d34a92c7cb1e.png</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    <!-- ... (other images would be listed similarly) ... -->
+
+</rdf:RDF>
