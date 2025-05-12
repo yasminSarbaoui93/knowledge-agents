@@ -64,7 +64,8 @@ tools = load_tools(
 from langchain.agents import AgentExecutor, create_tool_calling_agent
 from langchain_core.prompts import ChatPromptTemplate
 
-onthology_file_path="onthology_bolts.xml"
+import os
+onthology_file_path = os.path.join(os.path.dirname(__file__), "onthology_bolts.xml")
 with open(onthology_file_path, "r") as f:
     onthologyXML = f.read()
 
