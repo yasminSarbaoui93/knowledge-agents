@@ -36,7 +36,7 @@ SEARCH_ENDPOINT=$(echo "https://$SEARCH_NAME.search.windows.net")
 OPENAI_ENDPOINT=$(az cognitiveservices account show -n $OPENAI_NAME -g $RESOURCE_GROUP --query properties.endpoint -o tsv)
 DOC_INTEL_ENDPOINT=$(az cognitiveservices account show -n $DOC_INTEL_NAME -g $RESOURCE_GROUP --query properties.endpoint -o tsv)
 AI_TEXT_DEPLOYMENT="gpt-4o"
-AI_EMBEDDING_DEPLOYMENT="text-embedding-ada-002"
+AI_EMBEDDING_DEPLOYMENT="text-embedding-3-large"
 
 echo "container registry name: $AZURE_CONTAINER_REGISTRY_NAME"
 echo "application insights name: $APPINSIGHTS_NAME"

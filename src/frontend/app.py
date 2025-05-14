@@ -11,7 +11,7 @@ import streamlit as st
 import pandas as pd
 import dotenv
 
-from azure.identity import DefaultAzureCredential, get_bearer_token_provider
+# Removed DefaultAzureCredential and get_bearer_token_provider for key-based auth
 from langchain import hub
 from langchain_core.documents import Document
 from langchain_openai import AzureChatOpenAI
@@ -78,30 +78,37 @@ for message in st.session_state.conversation:
     # st.session_state.docs = 
 
 llm: AzureChatOpenAI = None
-token_provider = get_bearer_token_provider(DefaultAzureCredential(), "https://cognitiveservices.azure.com/.default")
+# Use API key authentication instead of token provider
+
+print("AZURE_OPENAI_ENDPOINT:", os.getenv("AZURE_OPENAI_ENDPOINT"))
+print("AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME:", os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME"))
+print("AZURE_OPENAI_VERSION:", os.getenv("AZURE_OPENAI_VERSION"))
+print("AZURE_OPENAI_EMBEDDING_MODEL:", os.getenv("AZURE_OPENAI_EMBEDDING_MODEL"))
+# print("Token provider:", token_provider)
 
 model = AzureChatOpenAI(
-        azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-        azure_ad_token_provider = token_provider,
-        azure_deployment=os.getenv("AZURE_OPENAI_COMPLETION_DEPLOYMENT_NAME"),
-        openai_api_version=os.getenv("AZURE_OPENAI_VERSION"),
-        temperature=0
-    )
+    azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
+    api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+    azure_deployment=os.getenv("AZURE_OPENAI_COMPLETION_DEPLOYMENT_NAME"),
+    openai_api_version=os.getenv("AZURE_OPENAI_VERSION"),
+    temperature=0
+)
 
 from langchain_community.vectorstores.azuresearch import AzureSearch
 from langchain_openai import AzureOpenAIEmbeddings, OpenAIEmbeddings
 
-embeddings_model : AzureOpenAIEmbeddings  = AzureOpenAIEmbeddings(    
-        azure_deployment = os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME"),
-        openai_api_version = os.getenv("AZURE_OPENAI_VERSION"),
-        model= os.getenv("AZURE_OPENAI_EMBEDDING_MODEL"),
-        azure_ad_token_provider = token_provider
-    )
+embeddings_model : AzureOpenAIEmbeddings  = AzureOpenAIEmbeddings(
+    azure_deployment = os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME"),
+    openai_api_version = os.getenv("AZURE_OPENAI_VERSION"),
+    model= os.getenv("AZURE_OPENAI_EMBEDDING_MODEL"),
+    api_key=os.getenv("AZURE_OPENAI_API_KEY")
+)
+
+# Removed get_azure_search_token, not needed for key-based auth
 
 vector_store: AzureSearch = AzureSearch(
     azure_search_endpoint=os.getenv("AZURE_AI_SEARCH_ENDPOINT"),
-    azure_search_key=None,
-    azure_ad_access_token=None,
+    azure_search_key=os.getenv("AZURE_AI_SEARCH_KEY"),
     index_name=os.getenv("AZURE_AI_SEARCH_INDEX"),
     embedding_function=embeddings_model.embed_query,
     additional_search_client_options={"retry_total": 4},
@@ -136,7 +143,15 @@ with st.sidebar:
             
             st.success("Files uploaded and saved successfully!")
 
-        selected_option = st.selectbox("Select a file for onthology generation", ["MDr_br141011_SR 0643_2.pdf", "CMMT256.pdf", "D412-16(2021).pdf"])
+        selected_option = st.selectbox(
+            "Select a file for onthology generation",
+            [
+                "MDr_br141011_SR 0643_2.pdf",
+                "CMMT256.pdf",
+                "D412-16(2021).pdf",
+                "EFSA Supporting Publications - 2018 -  - Outcome of the public consultation on the draft Scientific Opinion on Listeria.pdf"
+            ]
+        )
 
         # Start a new conversation
         if st.button("New Conversation"):
@@ -162,11 +177,23 @@ def retrieve(query: str) -> List[Tuple[Document, float]]:
     return retrieved_docs
 
 def generate(docs: List[Tuple[Document, float]], query: str) -> str:
-    docs_content = "\n\n".join(doc.page_content for doc in docs)
+    docs_content = "\n\n".join(doc[0].page_content for doc in docs)
     messages = prompt.invoke({"question": query, "context": docs_content})
     structured_llm = model.with_structured_output(AnswerWithSources)
     response = structured_llm.invoke(messages)
-    return response.content
+    print("DEBUG: response from structured_llm.invoke:", response)
+    if "content" in response:
+        return response["content"]
+    elif "answer" in response:
+        answer = response["answer"]
+        sources = response.get("sources", [])
+        if sources:
+            return f"{answer}\n\nSources: {sources}"
+        else:
+            return answer
+    else:
+        print("ERROR: Neither 'content' nor 'answer' key found in response:", response)
+        return "Sorry, I could not generate a response. (Debug info: No 'content' or 'answer' key in LLM response.)"
 
 query = st.chat_input("Insert your prompt here")
 
