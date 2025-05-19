@@ -14,6 +14,7 @@ terraform {
 
 provider "azurerm" {
   features {}
+  subscription_id = var.subscription_id
 }
 
 #-------------------
@@ -34,9 +35,7 @@ resource "azurerm_storage_account" "main" {
   location                 = azurerm_resource_group.main.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
-  allow_blob_public_access = false
   min_tls_version          = "TLS1_2"
-  enable_https_traffic_only = true
   tags                     = var.tags
 }
 
@@ -60,8 +59,6 @@ resource "azurerm_cosmosdb_account" "main" {
   resource_group_name = azurerm_resource_group.main.name
   offer_type          = "Standard"
   kind                = "GlobalDocumentDB"
-  enable_automatic_failover = false
-  enable_free_tier    = true
   consistency_policy {
     consistency_level = "Session"
   }
@@ -90,7 +87,7 @@ resource "azurerm_cosmosdb_sql_container" "documents" {
   resource_group_name = azurerm_resource_group.main.name
   account_name        = azurerm_cosmosdb_account.main.name
   database_name       = azurerm_cosmosdb_sql_database.main.name
-  partition_key_path  = "/id"
+  partition_key_paths = ["/id"]
 }
 
 resource "azurerm_cosmosdb_sql_container" "memory" {
@@ -98,7 +95,7 @@ resource "azurerm_cosmosdb_sql_container" "memory" {
   resource_group_name = azurerm_resource_group.main.name
   account_name        = azurerm_cosmosdb_account.main.name
   database_name       = azurerm_cosmosdb_sql_database.main.name
-  partition_key_path  = "/id"
+  partition_key_paths = ["/id"]
 }
 
 #-------------------

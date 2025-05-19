@@ -32,6 +32,22 @@ azd env get-values | grep AZURE_ENV_NAME
 source <(azd env get-values | grep AZURE_ENV_NAME)
 ```
 
+## Terraform Infrastructure Setup
+
+To configure Terraform with your Azure subscription id from the `.env` file, run:
+
+```bash
+export TF_VAR_subscription_id=$(grep '^AZURE_SUBSCRIPTION_ID=' .env | cut -d '=' -f2- | tr -d '"')
+```
+
+Then run the following Terraform commands:
+
+```bash
+cd infra-terraform
+terraform init
+terraform plan
+terraform apply
+```
 ## KernelService
 
 
