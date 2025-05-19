@@ -67,7 +67,7 @@ resource app 'Microsoft.App/containerApps@2023-04-01-preview' = {
             }
             {
               name: 'AZURE_OPENAI_VERSION'
-              value: '2024-02-01'
+              value: '2024-08-06'
             }
             {
               name: 'OPENAI_API_TYPE'

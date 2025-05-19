@@ -460,3 +460,11 @@ __pycache__/
 *.whl
 !autogen_core-0.3.dev0-py3-none-any.whl
 output
+azd-hooks
+.env.generated
+
+infra-terraform/.terraform
+infra-terraform/.terraform.lock.hcl
+
+
+infra-terraform/terraform.tfstate
