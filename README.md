@@ -32,7 +32,7 @@ azd env get-values | grep AZURE_ENV_NAME
 source <(azd env get-values | grep AZURE_ENV_NAME)
 ```
 
-## Terraform Infrastructure Setup
+## (Alternative) Terraform Infrastructure Setup
 
 To configure Terraform with your Azure subscription id from the `.env` file, run:
 
